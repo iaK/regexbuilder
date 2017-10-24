@@ -1,0 +1,7 @@
+/vendor/
+Vagrantfile
+after.sh
+aliases
+Homestead.yaml
+.phpintel/
+.vagrant/
