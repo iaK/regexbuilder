@@ -577,7 +577,6 @@ class PatternBuilder
         return $output;
     }
 
-
     /**
      * Replaces the matches
      * @param  string $string what to replace with

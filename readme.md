@@ -20,9 +20,11 @@ Simple as that :)
 
 ## Introduction
 
-This library is for all of us that find regular expressions unnessacarly hard to write and find it impossible to remember all the different flags, look aheads, capture groups etc.
+This library is for all of us that find regular expressions hard to write and impossible to remember all the different flags, look aheads, capture groups etc.
 
-Instead of spending that half hour searching stackoverflow, I hope you can easerly whip up a pattern using this lib.
+Instead of spending that half hour searching stackoverflow, I hope you can easily whip up a pattern using this lib.
+
+Note. a basic understading of how regular expressions is still needed.
 
 ## Quick start
 
@@ -40,7 +42,7 @@ $string = "wow! this is cool!"
 $match = Regex::word("wow")->symbol("!")->match($string); // wow!
 ```
 
-Or maybe something more advanced (demostrating some different ways of using the library)
+Or maybe something more advanced (and demostrating some different ways of using the library)
 
 ```php
 
@@ -384,6 +386,60 @@ _Returs the built up pattern_
     Regex::group("a-zA-Z")->oneOrMore()->symbols("!!")->optional()->zeroOrMore()->getPattern(); // /[a-zA-Z]+!!?*/
 ```
 
+<br/>
+
+#### release()
+
+_Removes built up pattern_
+
+```php
+    Regex::group("a-z")->symbol("!")->release()->symbols("only this")->getPattern(); // /only this/
+```
+
+<br/>
+
+## Matching and replacing
+
+<br/>
+
+#### replace($string, $subject)
+
+_Replace built up pattern with provided string_
+
+```php
+    $string = "This is a hashtag: @. I'm sure!";
+
+    Regex::symbol("@")->replace("#", $string); // This is a hashtag: #. I'm sure!
+```
+
+<br/>
+
+#### match($string)
+
+_Matches the first occurrence of the built up pattern_
+<br/>
+_Note! only return the match. If you want all capture groups, use matchWithGroups()_
+
+```php
+    $string = "Follow me on twitter: @Isak_Berglind!";
+
+    Regex::symbol("@")->group("a-zA-Z_")->oneOrMore()->match($string); // @Isak_Berglind
+
+```
+
+<br/>
+
+#### matchAll($string)
+
+_Matches all of the occurences of the built up pattern_
+<br/>
+_Note! only return the match. If you want all capture groups, use matchAllWithGroups()_
+
+```php
+    $string = "this is as good as it gets";
+
+    Regex::any()->symbol("s")->matchAll($string); // ["is", "is", "as", "as", "ts"]
+```
 
 
 

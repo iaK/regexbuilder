@@ -27,6 +27,16 @@ class PatternBuilderTest extends TestCase
     /**
     * @test
     */
+    public function try()
+    {
+        $string = "This is a hashtag: @. I'm sure!";
+
+        dd(Regex::group("a-z")->symbol("!")->release()->symbols("only this")->getPattern());
+    }
+
+    /**
+    * @test
+    */
     public function it_can_match_a_pattern()
     {
         $this->builder->pattern("\s[a-z]{3}\s");
