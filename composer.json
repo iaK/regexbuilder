@@ -1,6 +1,6 @@
 {
     "name": "iak/regexbuilder",
-    "description": "A simple regex pattern builder inspired by eloquent",
+    "description": "A fluent api that simplifies writing regular expressions",
     "type": "library",
     "license": "MIT",
     "keywords": ["regular expressions", "regex"],
