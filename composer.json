@@ -2,6 +2,14 @@
     "name": "iak/regexbuilder",
     "description": "A simple regex pattern builder inspired by eloquent",
     "type": "library",
+    "license": "MIT",
+    "keywords": ["regular expressions", "regex"],
+    "authors": [
+        {
+            "name": "Isak Berglind",
+            "email": "info@isakberglind.se"
+        }
+    ],
     "require-dev": {
         "phpunit/phpunit": "^6.3",
         "laravel/homestead": "^6.2",
@@ -16,12 +24,5 @@
         "psr-4": {
             "Tests\\": "tests/"
         }
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Isak Berglind",
-            "email": "info@isakberglind.se"
-        }
-    ]
+    }
 }

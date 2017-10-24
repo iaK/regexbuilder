@@ -11,7 +11,7 @@ $ composer require iak/regexbuilder
 ```json
 {
     "require": {
-        "iak/regexbuilder": "~0.1"
+        "iak/regexbuilder": "^1.0"
     }
 }
 ```
